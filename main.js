@@ -5,7 +5,7 @@ app.use(express.json());
 
 var con = mysql.createConnection({
   host: "192.34.62.4", // Host del database
-  user: "andrea", // Userna1me del database
+  user: "cE4yGn3dCjua", // Userna1me del database
   password: "A5twXYw0rWbflCv7", // Password del database
   database: "masstime-wp-TxkNuiUZ",
   debug: true,
