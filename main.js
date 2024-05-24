@@ -18,8 +18,10 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   con.connect(function (err) {
     console.log("Connected! ");
-    console.log(err);
   });
+  var tables = con.query("SHOW TABLES");
+  console.log(tables);
+  res.send(tables);
 });
 
 const port = process.env.PORT || 3000;
