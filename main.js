@@ -19,7 +19,7 @@ app.post("/", (req, res) => {
   con.connect(function (err) {
     console.log("Connected! ");
   });
-  con.query(sql, function (err, result) {
+  con.query("SHOW TABLES", function (err, result) {
     if (err) throw err;
     console.log("Result: " + result);
     res.send(result);
