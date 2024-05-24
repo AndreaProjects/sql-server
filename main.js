@@ -19,9 +19,11 @@ app.post("/", (req, res) => {
   con.connect(function (err) {
     console.log("Connected! ");
   });
-  var tables = con.query("SHOW TABLES");
-  console.log(tables);
-  res.send(tables);
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Result: " + result);
+    res.send(result);
+  });
 });
 
 const port = process.env.PORT || 3000;
