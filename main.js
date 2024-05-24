@@ -12,8 +12,17 @@ var con = mysql.createConnection({
 });
 
 app.get("/", (req, res) => {
+  res.send({ msg: "api" });
+});
+
+app.post("/", (req, res) => {
   con.connect(function (err) {
     console.log("Connected! ");
     console.log(err);
   });
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server avviato su http://localhost:${port}`);
 });
