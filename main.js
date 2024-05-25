@@ -16,10 +16,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
+  const { query } = req.body;
   con.connect(function (err) {
     console.log("Connected! ");
   });
-  con.query("SHOW TABLES", function (err, result) {
+  con.query(query, function (err, result) {
     if (err) throw err;
     console.log("Result: " + result);
     res.send(result);
