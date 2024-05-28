@@ -1,7 +1,12 @@
 const express = require("express");
 var mysql = require("mysql");
-const app = express();
+var cors = require("cors");
+
+var app = express();
+
 app.use(express.json());
+
+app.use(cors());
 
 var con = mysql.createConnection({
   host: "192.34.62.4", // Host del database
